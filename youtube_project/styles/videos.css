@@ -1,0 +1,113 @@
+@media (max-width: 790px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+ }    
+}
+@media (min-width: 790.02px) and (max-width: 1130px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr;
+ }    
+}
+@media (min-width: 1130.02px) {
+  main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+ }    
+}
+main {
+  display: grid;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+.thumbnail {
+  position: relative;
+  /* no need for it after making @media width */
+  /* max-width: 320px; */
+}
+.thumbnail img{
+  width: 100%;
+}
+.time {
+  position: absolute;
+  bottom: 10px;
+  right: 4px;
+
+  color: white;
+  background-color: black;
+  padding: 4px 3px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+.video-info-container {
+  display: flex;
+  align-items:flex-start;
+  margin-top: 10px;
+}
+.channel-img {
+  width: 36px;
+  position: relative;
+}
+.channel-img img {
+  width: 100%;
+  border-radius: 36px;
+  aspect-ratio: 1 / 1;  /* defining the aspect ratio of the imaage */
+  object-fit: cover;    /* making sure the image isn't distorted */
+}
+
+.video-text-info {
+  flex: 1;
+  margin-left: 10px;
+}
+.video-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 10px;  
+}
+.channel-name,
+.views-date {
+  font-size: 12px;
+  color: rgb(100, 100, 100);
+}
+.channel-name {
+  margin-bottom: 4px;
+}
+
+/* channel tooltip */
+
+.channel-tooltip {
+  display: flex;
+  align-items: center;
+  width: 210px;
+
+  background-color: white;
+  padding: 12px 10px;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+  position: absolute;
+  top: 44px;
+  z-index: 50;
+}
+.channel-img:hover .channel-tooltip {
+  opacity: 1;
+}
+.channel-tooltip img{
+  width: 52px;
+  height: 52px;
+}
+.tooltip-text {
+  margin-left: 8px;
+}
+.tooltip-channel-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.tooltip-channel-subscribers {
+  color: rgb(100, 100, 100);
+  font-size: 14px;
+}
